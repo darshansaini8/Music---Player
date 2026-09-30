@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuneFlow Music Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">◢</div>
+            <span>TuneFlow</span>
+        </div>
+
+        <nav class="side-nav">
+            <button class="nav-item active" data-page="home">
+                <span>⌂</span> Home
+            </button>
+            <button class="nav-item" data-page="search">
+                <span>⌕</span> Search
+            </button>
+            <button class="nav-item" data-page="explore">
+                <span>◉</span> Explore
+            </button>
+            <button class="nav-item" data-page="albums">
+                <span>▣</span> Albums
+            </button>
+            <button class="nav-item" data-page="artists">
+                <span>♙</span> Artists
+            </button>
+            <button class="nav-item" data-page="genres">
+                <span>✣</span> Genres
+            </button>
+            <button class="nav-item" data-page="playlists">
+                <span>☷</span> Playlists
+            </button>
+            <button class="nav-item" data-page="favorites">
+                <span>♡</span> Favorites
+            </button>
+            <button class="nav-item" data-page="recent">
+                <span>◷</span> Recently Played
+            </button>
+        </nav>
+
+        <div class="playlist-title">
+            <span>YOUR PLAYLISTS</span>
+            <button id="addPlaylist">+</button>
+        </div>
+
+        <div class="mini-playlists">
+            <button data-page="playlists">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=100&q=80">
+                Chill Vibes
+            </button>
+            <button data-page="playlists">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=100&q=80">
+                Workout Mix
+            </button>
+            <button data-page="playlists">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=100&q=80">
+                Love Songs
+            </button>
+            <button data-page="playlists">
+                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=100&q=80">
+                Lofi Beats
+            </button>
+            <button data-page="playlists">
+                <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=100&q=80">
+                Party Hits
+            </button>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <button class="mobile-menu" id="mobileMenu">☰</button>
+
+            <div class="mobile-brand">
+                <div class="brand-logo">◢</div>
+                TuneFlow
+            </div>
+
+            <div class="global-search">
+                <span>⌕</span>
+                <input id="searchInput" type="text" placeholder="Search songs, artists, albums...">
+            </div>
+
+            <div class="top-actions">
+                <button class="icon-btn" id="themeBtn">☾</button>
+                <button class="icon-btn notification">♧<i></i></button>
+                <button class="profile">
+                    <img src="https://i.pravatar.cc/100?img=12">
+                    <span>darshan saini</span>
+                    <b>⌄</b>
+                </button>
+            </div>
+        </header>
+
+        <section class="page active-page" id="page-home">
+
+            <div class="hero">
+                <div class="hero-content">
+                    <small>FEATURED</small>
+                    <h1>Music for<br>Every Moment</h1>
+                    <p>Discover, Stream, and Feel the Beat</p>
+                    <div class="hero-buttons">
+                        <button class="pink-btn" data-play="0">▶ Play Now</button>
+                        <button class="outline-btn" data-page="explore">Explore</button>
+                    </div>
+                </div>
+
+                <div class="hero-arrows">
+                    <button>‹</button>
+                    <button>›</button>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <h2>Trending Now</h2>
+                    <button data-page="explore">See All ›</button>
+                </div>
+                <div class="music-grid" id="trendingGrid"></div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <h2>Recently Played</h2>
+                    <button data-page="recent">See All ›</button>
+                </div>
+                <div class="music-grid" id="recentGrid"></div>
+            </section>
+
+        </section>
+
+        <section class="page" id="page-search">
+            <div class="page-title">
+                <span>DISCOVER</span>
+                <h1>Search Music</h1>
+                <p>Find your favorite songs, artists and albums.</p>
+            </div>
+
+            <div class="large-search">
+                <span>⌕</span>
+                <input id="largeSearch" placeholder="What do you want to listen to?">
+            </div>
+
+            <div class="section-heading">
+                <h2 id="searchHeading">Popular Music</h2>
+            </div>
+
+            <div class="music-grid" id="searchGrid"></div>
+        </section>
+
+        <section class="page" id="page-explore">
+            <div class="page-title">
+                <span>EXPLORE</span>
+                <h1>Find Your Sound</h1>
+                <p>Explore trending music and discover something new.</p>
+            </div>
+
+            <div class="genre-pills">
+                <button class="active">All</button>
+                <button>Pop</button>
+                <button>Hip Hop</button>
+                <button>Rock</button>
+                <button>Electronic</button>
+                <button>Chill</button>
+                <button>Workout</button>
+            </div>
+
+            <div class="music-grid" id="exploreGrid"></div>
+        </section>
+
+        <section class="page" id="page-albums">
+            <div class="page-title">
+                <span>LIBRARY</span>
+                <h1>Albums</h1>
+                <p>Browse albums from your favorite artists.</p>
+            </div>
+
+            <div class="album-grid" id="albumGrid"></div>
+        </section>
+
+        <section class="page" id="page-artists">
+            <div class="page-title">
+                <span>ARTISTS</span>
+                <h1>Artists</h1>
+                <p>Meet the artists behind your favorite music.</p>
+            </div>
+
+            <div class="artist-grid" id="artistGrid"></div>
+        </section>
+
+        <section class="page" id="page-genres">
+            <div class="page-title">
+                <span>EXPLORE</span>
+                <h1>Genres</h1>
+                <p>Choose a mood and start listening.</p>
+            </div>
+
+            <div class="genre-grid">
+                <div class="genre-card pink">Pop <span>♪</span></div>
+                <div class="genre-card purple">Electronic <span>♫</span></div>
+                <div class="genre-card blue">Hip Hop <span>♬</span></div>
+                <div class="genre-card orange">Rock <span>♩</span></div>
+                <div class="genre-card cyan">Chill <span>♪</span></div>
+                <div class="genre-card green">Workout <span>♫</span></div>
+            </div>
+        </section>
+
+        <section class="page" id="page-playlists">
+            <div class="page-title">
+                <span>YOUR MUSIC</span>
+                <h1>Playlists</h1>
+                <p>Your personal collection of music.</p>
+            </div>
+
+            <div class="playlist-grid">
+                <div class="playlist-card">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=700&q=85">
+                    <h3>Chill Vibes</h3>
+                    <p>42 songs</p>
+                </div>
+                <div class="playlist-card">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=700&q=85">
+                    <h3>Workout Mix</h3>
+                    <p>35 songs</p>
+                </div>
+                <div class="playlist-card">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=700&q=85">
+                    <h3>Love Songs</h3>
+                    <p>28 songs</p>
+                </div>
+                <div class="playlist-card">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=700&q=85">
+                    <h3>Lofi Beats</h3>
+                    <p>56 songs</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-favorites">
+            <div class="page-title">
+                <span>YOUR LIBRARY</span>
+                <h1>Favorites</h1>
+                <p>Songs you have saved.</p>
+            </div>
+            <div class="music-grid" id="favoriteGrid"></div>
+        </section>
+
+        <section class="page" id="page-recent">
+            <div class="page-title">
+                <span>HISTORY</span>
+                <h1>Recently Played</h1>
+                <p>Your listening history.</p>
+            </div>
+            <div class="music-grid" id="recentPageGrid"></div>
+        </section>
+
+        <section class="page" id="page-lyrics">
+            <div class="lyrics-page">
+                <div class="lyrics-cover">
+                    <img id="lyricsCover" src="">
+                    <h2 id="lyricsTitle">Kesariya</h2>
+                    <p id="lyricsArtist">Arijit Singh</p>
+                </div>
+
+                <div class="lyrics-content">
+                    <div class="lyrics-tabs">
+                        <button class="active">Lyrics</button>
+                        <button>Queue</button>
+                        <button>Artist</button>
+                    </div>
+
+                    <h2>
+                        Teri aankhon mein hai saari duniya<br>
+                        Meri baahon mein tu hai yahan
+                    </h2>
+
+                    <p>
+                        Teri hansi se hai roshan yeh raahen<br>
+                        Tu hai toh sab kuch hai yahan
+                    </p>
+
+                    <p>
+                        Har pal tera saath rahe<br>
+                        Yeh zindagi tujhse hi hai
+                    </p>
+
+                    <p>
+                        Teri muskaan se hi hai<br>
+                        Meri har khushi yahan
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-equalizer">
+            <div class="page-title">
+                <span>AUDIO</span>
+                <h1>Equalizer</h1>
+                <p>Customize your listening experience.</p>
+            </div>
+
+            <div class="equalizer-panel">
+                <div class="eq-presets">
+                    <button class="active">Custom</button>
+                    <button>Pop</button>
+                    <button>Rock</button>
+                    <button>Jazz</button>
+                    <button>Bass</button>
+                </div>
+
+                <div class="eq-sliders">
+                    <div>
+                        <input type="range" min="0" max="100" value="62">
+                        <span>60</span>
+                    </div>
+                    <div>
+                        <input type="range" min="0" max="100" value="75">
+                        <span>230</span>
+                    </div>
+                    <div>
+                        <input type="range" min="0" max="100" value="55">
+                        <span>910</span>
+                    </div>
+                    <div>
+                        <input type="range" min="0" max="100" value="70">
+                        <span>3.6k</span>
+                    </div>
+                    <div>
+                        <input type="range" min="0" max="100" value="48">
+                        <span>14k</span>
+                    </div>
+                </div>
+
+                <div class="bass-control">
+                    <span>Bass Boost</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <i></i>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="player">
+
+        <div class="player-song">
+            <img id="playerCover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&q=80">
+            <div>
+                <strong id="playerTitle">Kesariya</strong>
+                <span id="playerArtist">Arijit Singh</span>
+            </div>
+            <button id="favoritePlayer">♡</button>
+        </div>
+
+        <div class="player-controls">
+
+            <div class="time-row">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progress" min="0" max="100" value="0">
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="control-buttons">
+                <button id="shuffle">⤨</button>
+                <button id="previous">◀</button>
+                <button class="play-main" id="playBtn">▶</button>
+                <button id="next">▶</button>
+                <button id="repeat">⟳</button>
+            </div>
+        </div>
+
+        <div class="volume-area">
+            <span>◖</span>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8">
+            <button data-page="equalizer">☷</button>
+        </div>
+
+    </div>
+
+    <nav class="mobile-nav">
+        <button class="active" data-page="home">
+            <span>⌂</span>
+            Home
+        </button>
+        <button data-page="search">
+            <span>⌕</span>
+            Search
+        </button>
+        <button data-page="explore">
+            <span>◈</span>
+            Library
+        </button>
+        <button data-page="favorites">
+            <span>♡</span>
+            Favorites
+        </button>
+        <button data-page="equalizer">
+            <span>♧</span>
+            Premium
+        </button>
+    </nav>
+
+</div>
+
+<div class="toast" id="toast">✓ Added to favorites</div>
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
