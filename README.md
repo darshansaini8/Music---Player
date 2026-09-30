@@ -1,12 +1,6 @@
 # 🎵 TuneFlow
 
 <p align="center">
-  <a href="https://kommodo.ai/i/XTxuthOKcdZjL4eerTqK">
-    <img src="https://kommodo.ai/i/XTxuthOKcdZjL4eerTqK" alt="TuneFlow Hero" width="100%">
-  </a>
-</p>
-
-<p align="center">
   <strong>🎧 A Modern • Premium • Responsive Music Player</strong>
 </p>
 
@@ -16,31 +10,53 @@
 
 ---
 
-## 🎶 TuneFlow
+## 🎶 About TuneFlow
 
-A stylish web music player with a premium dark-neon interface, smooth interactions and an immersive listening experience.
+TuneFlow is a modern web-based music player featuring a premium dark-neon interface, smooth interactions, responsive design, and an immersive listening experience.
 
 ### ✨ Features
 
-🎵 Music Library • ▶️ Audio Controls • 🔎 Search • ❤️ Favorites  
-🔀 Shuffle • 🔁 Repeat • 🎤 Artists • 💿 Albums • 🎼 Genres  
-📱 Responsive UI • 🌌 Premium Dark Theme
+* 🎵 Music Library
+* ▶️ Audio Controls
+* 🔎 Search
+* ❤️ Favorites
+* 🔀 Shuffle
+* 🔁 Repeat
+* 🎤 Artists
+* 💿 Albums
+* 🎼 Genres
+* 📱 Fully Responsive UI
+* 🌌 Premium Dark Theme
 
 ---
 
 ## 🖼️ Interface Preview
 
-<p align="center">
-  <a href="https://kommodo.ai/i/c8GPv2BkszbHyBdKBvrx">
-    <img src="https://kommodo.ai/i/c8GPv2BkszbHyBdKBvrx" alt="TuneFlow Preview" width="90%">
-  </a>
-</p>
+### 🎧 Hero Interface
 
 <p align="center">
-  <a href="https://kommodo.ai/i/qmyUMHsH2ILmr2P6EGV8">
-    <img src="https://kommodo.ai/i/qmyUMHsH2ILmr2P6EGV8" alt="TuneFlow Music Player" width="90%">
-  </a>
+  <img src="./screenshots/screen1.png" alt="TuneFlow Hero Interface" width="100%">
 </p>
+
+### 🎵 Music Player Interface
+
+<p align="center">
+  <img src="./screenshots/screen2.png" alt="TuneFlow Music Player" width="90%">
+</p>
+
+### 🎶 Responsive Interface
+
+<p align="center">
+  <img src="./screenshots/screen3.png" alt="TuneFlow Responsive Interface" width="90%">
+</p>
+
+---
+
+## 🛠️ Built With
+
+* **HTML5**
+* **CSS3**
+* **Vanilla JavaScript**
 
 ---
 
@@ -50,4 +66,4 @@ A stylish web music player with a premium dark-neon interface, smooth interactio
 
 <p align="center">
   Made with ❤️ by <strong>Darshan Saini</strong>
-</p>c
+</p>
